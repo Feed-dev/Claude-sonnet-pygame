@@ -3,6 +3,7 @@ import sys
 from src.utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, GAME_TITLE, BLACK
 from src.game.entities.player import Player
 from src.game.levels.level import Level
+from src.game.camera import Camera
 
 class Game:
     def __init__(self):
@@ -15,6 +16,9 @@ class Game:
         self.level = Level()
         self.player = Player(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2)
         self.all_sprites = pygame.sprite.Group(self.player)
+        
+        # Create camera (assuming the level is 3 screens wide and 2 screens tall)
+        self.camera = Camera(WINDOW_WIDTH * 3, WINDOW_HEIGHT * 2)
 
     def handle_events(self):
         for event in pygame.event.get():
@@ -27,11 +31,18 @@ class Game:
     def update(self):
         self.all_sprites.update(self.level.platforms)
         self.level.update()
+        self.camera.update(self.player)
 
     def render(self):
         self.screen.fill(BLACK)
-        self.level.draw(self.screen)
-        self.all_sprites.draw(self.screen)
+        
+        # Draw platforms
+        for platform in self.level.platforms:
+            self.screen.blit(platform.image, self.camera.apply(platform))
+        
+        # Draw player
+        self.screen.blit(self.player.image, self.camera.apply(self.player))
+        
         pygame.display.flip()
 
     def run(self):
