@@ -1,6 +1,6 @@
 import pygame
-from src.game.entities.platform import Platform
-from src.utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, GROUND_HEIGHT
+from game.entities.platform import Platform
+from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, GROUND_HEIGHT
 
 class Level:
     def __init__(self):
