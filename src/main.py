@@ -1,9 +1,9 @@
 import pygame
 import sys
-from src.utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, GAME_TITLE, BLACK
-from src.game.entities.player import Player
-from src.game.levels.level import Level
-from src.game.camera import Camera
+from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, FPS, GAME_TITLE, BLACK
+from game.entities.player import Player
+from game.levels.level import Level
+from game.camera import Camera
 
 class Game:
     def __init__(self):
