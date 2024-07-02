@@ -1,5 +1,5 @@
 import pygame
-from src.utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT
+from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT
 
 class Camera:
     def __init__(self, width, height):
