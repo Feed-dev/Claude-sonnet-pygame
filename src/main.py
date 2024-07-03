@@ -5,6 +5,7 @@ from game.entities.player import Player
 from game.levels.level import Level
 from game.camera import Camera
 
+
 class Game:
     def __init__(self):
         pygame.init()
@@ -54,6 +55,7 @@ class Game:
 
         pygame.quit()
         sys.exit()
+
 
 if __name__ == "__main__":
     game = Game()
