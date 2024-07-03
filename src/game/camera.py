@@ -1,6 +1,7 @@
 import pygame
 from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT
 
+
 class Camera:
     def __init__(self, width, height):
         self.camera = pygame.Rect(0, 0, width, height)
