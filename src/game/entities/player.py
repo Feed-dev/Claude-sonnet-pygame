@@ -1,6 +1,7 @@
 import pygame
 from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, PLAYER_SPEED, PLAYER_JUMP_STRENGTH, GRAVITY, NEON_BLUE
 
+
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
