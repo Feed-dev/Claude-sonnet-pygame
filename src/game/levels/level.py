@@ -2,6 +2,7 @@ import pygame
 from game.entities.platform import Platform
 from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, GROUND_HEIGHT
 
+
 class Level:
     def __init__(self):
         self.platforms = pygame.sprite.Group()
