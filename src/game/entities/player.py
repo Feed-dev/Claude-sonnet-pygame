@@ -5,8 +5,8 @@ from utils.constants import WINDOW_WIDTH, WINDOW_HEIGHT, PLAYER_SPEED, PLAYER_JU
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        self.image = pygame.Surface((40, 60))
-        self.image.fill(NEON_BLUE)
+        self.image = pygame.image.load('assets/images/samurai.png').convert_alpha()
+        self.image  = pygame.transform.scale(self.image, (60, 80))  # Adjust size as needed
         self.rect = self.image.get_rect()
         self.rect.x = x
         self.rect.y = y
